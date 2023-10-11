@@ -9,14 +9,13 @@ const port = 4000;
 const route = require("./routes/index.js");
 const db = require("./config/db/index.js");
 
-const corsOption = {
-    credentials: true,
-    origin: ["http://yourdomain.com", "http://localhost:3000", "http://127.0.0.1:5500"],
-};
+// const corsOption = {
+//     credentials: true,
+//     origin: ["http://yourdomain.com", "http://localhost:3000", "http://127.0.0.1:5500"],
+// };
 // connect to DB
 db.connect();
-
-app.use(cors(corsOption));
+app.use(cors());
 
 app.use(cookieParser());
 

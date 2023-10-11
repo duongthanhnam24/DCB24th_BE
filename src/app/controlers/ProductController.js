@@ -5,7 +5,16 @@ const escapeStringRegexp = require("escape-string-regexp-node");
 const createProduct = async (req, res) => {
     try {
         const { name, price, image, type, size, Ob } = req.body;
-        if (!name || !price || !image || image.lenght >= 3 || !type || !size || !Ob) {
+        if (
+            !name ||
+            !price ||
+            !image ||
+            image.lenght < 3 ||
+            !type ||
+            !size ||
+            size.lenght < 1 ||
+            !Ob
+        ) {
             return res.status(400).json({ message: "missing something ?" });
         }
 

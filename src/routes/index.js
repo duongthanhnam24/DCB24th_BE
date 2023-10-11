@@ -1,6 +1,7 @@
 const USER = require("./user");
 const PRODUCT = require("./product");
 const REFRESH = require("./refreshToken");
+const ORDER = require("./order");
 
 function route(app) {
     //     // route (truyền vào 2 đối số 1 Path là tuyến đường 2 là function handler)
@@ -10,6 +11,7 @@ function route(app) {
     app.use("/users", USER);
     app.use("/product", PRODUCT);
     app.use("/refresh", REFRESH);
+    app.use("/order", ORDER);
 }
 
 module.exports = route;
